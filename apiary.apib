@@ -207,6 +207,69 @@ Gets user specific car by following parameters:
           ]
         }
 
+
+### Update a car [PUT]
+Updates given car with new values 
+
++ Request (application/json)
+
+        {
+          "displayName" : "My car",
+          "carStatus" : "PREVIOUS",
+          "details" : {
+            "registrationNumber" : "XYZ123",
+            "model" : "FOX",
+            "derivative" : "FOX 55",
+            "registrationDate" : "2010-11-30",
+            "fuelType" : "Petrol",
+            "vin" : "WVWZZZ5ZZA4118219",
+            "year" : "2010",
+            "engineCapacity" : 1.2,
+            "transmission" : "Manual"
+          }
+        }
+        
++ Response 200 (application/json)
+
+        {
+          "car": {
+            "id" : carId,
+            "userId" : userId,
+            "displayName" : "My car",
+            "carStatus" : "PREVIOUS",
+            "orderNumber" : null,
+            "deliveryPhaseStatement" : "",
+            "deliveryPhaseType" : null,
+            "deliveryLeadTimeStatement" : null,
+            "ownership" : null,
+            "companyCarLeasedFrom" : null,
+            "financed" : false,
+            "purchaseType" : null,
+            "details" : {
+              "derivative" : "FOX 55",
+              "engineCapacity" : 1.2,
+              "fuelType" : "Petrol",
+              "hasServicePlan" : null,
+              "hasWarranty" : null,
+              "model" : "FOX",
+              "registrationDate" : "2010-11-30",
+              "registrationNumber" : "XYZ123",
+              "transmission" : "Manual",
+              "vin" : "WVWZZZ5ZZA4118219",
+              "year" : "2010"
+            },
+            "suppliedByRetailer" : null,
+            "servicedByRetailer" : null,
+            "images" : null,
+            "dateCreated" : "2015-05-08T13:32:10Z",
+            "lastUpdated" : "2015-05-08T13:32:10Z",
+            "isMotDue" : false,
+            "motDue" : null,
+            "links" : {}
+          }
+        }
+
+
 ### Delete a car [DELETE]
 Returns HTTP 204 - no body
 
