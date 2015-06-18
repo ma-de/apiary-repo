@@ -1,0 +1,377 @@
+FORMAT: 1A
+
+# User API
+User is a simple API allowing consumers to get car data.
+
+## Group User
+
+Resources related to Users in the API. Returns array of cars objects with following attributes:
+
++ id - car id
++ userId - user unique id
++ displayName - display name ex. "VW Scirocco"
++ carStatus - Car status ex. "CURRENT"
++ registrationNumber - Reg number ex. "VMN646"
+
++ Parameters
+    + userid (required, number) - ID of the Car in form of an integer
+
+
+## Cars data [/api/user/2.0/users/{userid}/cars]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
+
+### Get incorrect car [GET]
+Returns error as there is no random car.
++ Response 400 (application/json)
+
+        {
+          "errors" : [
+            {
+              "code" : "car.not.found",
+              "defaultMessage" : "Car not found"
+            },
+            {
+              "code" : "user.not.found",
+              "defaultMessage" : "User not found"
+            }
+          ]
+        }
+
+
+
+## User 1 with 1 cars [/api/user/2.0/users/1/cars]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
+
+
+### Get user 1 cars [GET]
++ Response 200 (application/json)
+    + Body
+        
+                {
+                  "cars" : [
+                            {
+                              "car": {
+                                "id" : "FF3",
+                                "userId" : userId,
+                                "displayName" : "My car",
+                                "carStatus" : "CURRENT",
+                                "orderNumber" : null,
+                                "deliveryPhaseStatement" : "",
+                                "deliveryPhaseType" : null,
+                                "deliveryLeadTimeStatement" : null,
+                                "ownership" : null,
+                                "companyCarLeasedFrom" : null,
+                                "financed" : false,
+                                "purchaseType" : null,
+                                "details" : {
+                                  "derivative" : "FOX 55",
+                                  "engineCapacity" : 1.2,
+                                  "fuelType" : "Petrol",
+                                  "hasServicePlan" : null,
+                                  "hasWarranty" : null,
+                                  "model" : "FOX",
+                                  "registrationDate" : "2010-11-30",
+                                  "registrationNumber" : "XYZ123",
+                                  "transmission" : "Manual",
+                                  "vin" : "WVWZZZ5ZZA4118219",
+                                  "year" : "2010"
+                                },
+                                "suppliedByRetailer" : null,
+                                "servicedByRetailer" : null,
+                                "images" : null,
+                                "dateCreated" : "2015-05-08T13:32:10Z",
+                                "lastUpdated" : "2015-05-08T13:32:10Z",
+                                "isMotDue" : false,
+                                "motDue" : null,
+                                "links" : {}
+                              }
+                            } 
+                    ]
+                }
+
+
+### Create user for user 1 [POST]
++ Request (application/json)
+
+        {
+          "displayName" : "My car",
+          "carStatus" : "CURRENT",
+          "details" : {
+            "registrationNumber" : "XYZ123",
+            "model" : "FOX",
+            "derivative" : "FOX 55",
+            "registrationDate" : "2010-11-30",
+            "fuelType" : "Petrol",
+            "vin" : "WVWZZZ5ZZA4118219",
+            "year" : "2010",
+            "engineCapacity" : 1.2,
+            "transmission" : "Manual"
+          }
+        }
+        
++ Response 201 (application/json)
+
+        {
+          "car": {
+            "id" : "FF3",
+            "userId" : userId,
+            "displayName" : "My car",
+            "carStatus" : "CURRENT",
+            "orderNumber" : null,
+            "deliveryPhaseStatement" : "",
+            "deliveryPhaseType" : null,
+            "deliveryLeadTimeStatement" : null,
+            "ownership" : null,
+            "companyCarLeasedFrom" : null,
+            "financed" : false,
+            "purchaseType" : null,
+            "details" : {
+              "derivative" : "FOX 55",
+              "engineCapacity" : 1.2,
+              "fuelType" : "Petrol",
+              "hasServicePlan" : null,
+              "hasWarranty" : null,
+              "model" : "FOX",
+              "registrationDate" : "2010-11-30",
+              "registrationNumber" : "XYZ123",
+              "transmission" : "Manual",
+              "vin" : "WVWZZZ5ZZA4118219",
+              "year" : "2010"
+            },
+            "suppliedByRetailer" : null,
+            "servicedByRetailer" : null,
+            "images" : null,
+            "dateCreated" : "2015-05-08T13:32:10Z",
+            "lastUpdated" : "2015-05-08T13:32:10Z",
+            "isMotDue" : false,
+            "motDue" : null,
+            "links" : {}
+          }
+        }
+ 
+
+## User 2 with 2 car [/api/user/2.0/users/2/cars]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
+
+
+### Get user 2 cars [GET]
+Returns a user data of 2 cars.
++ Response 200 (application/json)
+    + Body
+        
+                {
+                  "cars" : [
+                    {
+                      "id" : "FF1",
+                      "userId" : userId,
+                      "displayName" : "VW Scirocco",
+                      "carStatus" : "CURRENT",
+                      "registrationNumber" : "VMN646"
+                    },
+                    {
+                      "id" : "FF2",
+                      "userId" : userId,
+                      "displayName" : "VW Passat",
+                      "carStatus" : "PREVIOUS",
+                      "registrationNumber" : "ABC123"
+                    }  
+                    ]
+                }
+
+
+
+## User specific car data - by car id  [/api/user/2.0/users/{userid}/cars/{carid}]
+Returns a specific car data, filtered by user id and car id 
+
+### Get invalid car [GET]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
++ carid (required, number) - ID of the Car in form of an integer
+
+    
++ Response 400 (application/json)
+
+        {
+          "errors" : [
+            {
+              "code" : "car.not.found",
+              "defaultMessage" : "Car not found"
+            },
+            {
+              "code" : "user.not.found",
+              "defaultMessage" : "User not found"
+            }
+          ]
+        }
+
+### Delete a car [DELETE]
+Returns HTTP 204 - no body
+
+Deletes user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
++ carid (required, number) - ID of the Car in form of an integer
+
++ Response 204
+
+
+## User specific car data - by car id  [/api/user/2.0/users/2/cars/1]
+Returns a specific car data, filtered by user id and car id 
+
+### Get user 2 - car 1 data [GET]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
++ carid (required, number) - ID of the Car in form of an integer
+
++ Response 200 (application/json)
+
+        {
+          "car": {
+            "id" : carId,
+            "userId" : userId,
+            "displayName" : "VW Scirocco",
+            "carStatus" : "CURRENT",
+            "orderNumber" : null,
+            "deliveryPhaseStatement" : "",
+            "deliveryPhaseType" : null,
+            "deliveryLeadTimeStatement" : null,
+            "ownership" : "PRIVATE",
+            "companyCarLeasedFrom" : null,
+            "financed" : true,
+            "purchaseType" : "USED_CAR",
+            "details" : {
+              "derivative" : "GT Bluemotion 140",
+              "engineCapacity" : 2.00,
+              "fuelType" : "Diesel",
+              "hasServicePlan" : null,
+              "hasWarranty" : null,
+              "model" : "Scirocco",
+              "registrationDate" : "2012-02-01",
+              "registrationNumber" : "VMN646",
+              "transmission" : "Manual",
+              "vin" : "WVWZZZ6RZCY193820",
+              "year":"2012"
+            },
+            "suppliedByRetailer" : {
+              "buildingName" : null,
+              "contactEmail" : "wilflowther@raymotors.com",
+              "contactName" : "WILF LOWTHER",
+              "county" : "ISLE OF MAN",
+              "dealerNo" : "00475",
+              "departmentType" : null,
+              "district" : null,
+              "isActive" : null,
+              "name" : "RAYMOTORS VOLKSWAGEN",
+              "postcode" : "IM8 2AB",
+              "street" : "PARLIAMENT SQUARE",
+              "telephone" : "01624 813000",
+              "town" : "RAMSEY"
+            },
+            "servicedByRetailer" : {
+              "buildingName" : null,
+              "contactEmail" : "tribalddbtech@gmail.com",
+              "contactName" : "Terry",
+              "county" : "ISLE OF MAN",
+              "dealerNo" : "00475",
+              "departmentType" : "Service",
+              "district" : null,
+              "isActive" : true,
+              "name" : "RAYMOTORS VOLKSWAGEN",
+              "postcode" : "IM8 2AB",
+              "street" : "PARLIAMENT SQUARE",
+              "telephone" : "01624 813011",
+              "town" : "RAMSEY"
+            },
+            "images" : [
+              "75e265bf-07c5-40a0-aef6-bd3f91356883.png"
+            ],
+            "dateCreated" : "2013-12-20T20:17:27Z",
+            "lastUpdated" : "2015-05-22T16:26:58Z",
+            "isMotDue" : false,
+            "motDue" : "2016-02-01T00:00:00Z",
+            "links" : {}
+          },
+          "serviceHistory" : [
+            {
+              "servicedByRetailer" : {
+                "dealerNo" : "00688",
+                "name" : "Cheltenham Volkswagen"
+              },
+              "serviceDate" : "2013-03-18"
+            },
+            {
+              "servicedByRetailer" : {
+                "dealerNo" : "00548",
+                "name" : "Inchcape Volkswagen Chester"
+              },
+              "serviceDate" : "2013-07-20"
+            }
+          ],
+          "servicePlan" : {
+            "product" : "Fixed Price Servicing",
+            "startDate" : "2012-03-01",
+            "endDate" : "2015-02-28",
+            "contractLength" : 36
+          },
+          "financePlan" : {
+            "productDescription" : "Hire Purchase",
+            "startDate" : "2013-03-15",
+            "endDate" : "2016-03-14"
+          }
+        }
+
+
+
+
+## Group Car reg lookup
+Returns car details by following parameters:
++ regNo (required, string) - Car registration number in form of an String
+
+## Car details for reg number [/api/user/2.0/users/userId/carDetails/ABC123]
+### Get car details for valid reg number [GET]
+Returns car details for valid registration number ABC123
++ Response 200 (application/json)
+
+        {
+          "carDetails" : {
+            "registrationNumber" : "ABC123",
+            "model" : "FOX",
+            "derivative" : "FOX 55",
+            "registrationDate" : "2010-11-30",
+            "fuelType" : "Petrol",
+            "vin" : "WVWZZZ5ZZA4118219",
+            "year" : "2010",
+            "engineCapacity" : 1.2,
+            "transmission" : "Manual"
+          }
+        }
+
+## Car details for reg number [/api/user/2.0/users/userId/carDetails/{regNo}]
+### Get car details for invalid reg number [GET]
+Returns error for invalid registration number
++ Response 400 (application/json)
+
+        {
+          "errors" : [
+            {
+              "code" : "car.not.found",
+              "defaultMessage" : "Car not found"
+            }
+          ]
+        }
+
+## Car details for reg number [/api/user/2.0/users/userId/carDetails/XXX009]
+### Get car details for invalid reg number [GET]
+Returns error for non VW vechicle for reg number XXX009
++ Response 400 (application/json)
+
+        {
+          "errors" : [
+            {
+              "code" : "non.vw.vehicle",
+              "defaultMessage" : "Car is not VW vechicle"
+            }
+          ]
+        }
