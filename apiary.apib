@@ -438,3 +438,47 @@ Returns error for non VW vechicle for reg number XXX009
             }
           ]
         }
+        
+        
+## Group Owner details
+Owner details section
+
+
+## Owner details endpoint [/api/user/2.0/users/{userId}/cars/{carId}/ownerDetails]
+### Get owner details for given user and car id [GET]
+Returns error as no action by default 
++ Response 400 (application/json)
+
+        {
+          "errors" : [
+            {
+              "code" : "car.not.found",
+              "defaultMessage" : "Car not found"
+            },
+            {
+              "code" : "user.not.found",
+              "defaultMessage" : "User not found"
+            }
+          ]
+        }
+
+## Owner details endpoint [/api/user/2.0/users/1/cars/1/ownerDetails]
+### Get owner details for given user and car id [GET]
+Returns owner details for specific user 1
+
++ Request (application/json)
+
+        {
+          "postCode" : "GL542EB",
+          "lastName" : "Quinn"
+        }
+
++ Response 201 (application/json)
+
+        {
+          "ownerDetails" : {
+            "postCode" : "GL542EB",
+            "lastName" : "Quinn",
+            "carId" : carId
+          }
+        }
