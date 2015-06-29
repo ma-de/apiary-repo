@@ -482,3 +482,68 @@ Returns owner details for specific user 1
             "carId" : carId
           }
         }
+
+
+
+
+## Group DBG user details
+DBG user details
+
+
+## Service history endpoint [/api/user/2.0/users/{userId}/cars/{carId}/serviceHistory]
+### Get service history for given user and car id [GET]
+Returns service history for this user car
++ Response 200 (application/json)
+
+        {
+          "serviceHistory" : [
+            {
+              "servicedByRetailer" : {
+                "dealerNo" : "00688",
+                "name" : "Cheltenham Volkswagen"
+              },
+              "serviceDate" : "2013-03-18"
+            },
+            {
+              "servicedByRetailer" : {
+                "dealerNo" : "00548",
+                "name" : "Inchcape Volkswagen Chester"
+              },
+              "serviceDate" : "2013-07-20"
+            }
+          ]
+        }
+        
+        
+## Finance plan endpoint [/api/user/2.0/users/{userId}/cars/{carId}/financePlan]
+### Get finance plan for given user and car id [GET]
+Returns finance plan for this user car
++ Response 200 (application/json)
+
+        {
+          "financePlan" : {
+            "productDescription" : "Hire Purchase",
+            "startDate" : "2013-03-15",
+            "endDate" : "2016-03-14"
+          }
+        }
+        
+        
+## Service plan endpoint [/api/user/2.0/users/{userId}/cars/{carId}/servicePlan]
+### Get service plan for given user and car id [GET]
+Returns service plan for this user car
++ Response 200 (application/json)
+
+        {
+          "servicePlan" : {
+            "product" : "Fixed Price Servicing",
+            "startDate" : "2012-03-01",
+            "endDate" : "2015-02-28",
+            "contractLength" : 36
+          }
+        }
+         
+ 
+         
+        
+        
