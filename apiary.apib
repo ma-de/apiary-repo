@@ -65,7 +65,7 @@ Gets user specific car by following parameters:
                                 "companyCarLeasedFrom" : null,
                                 "financed" : false,
                                 "purchaseType" : null,
-                                "details" : {
+                                "carDetails" : {
                                   "derivative" : "FOX 55",
                                   "engineCapacity" : 1.2,
                                   "fuelType" : "Petrol",
@@ -98,7 +98,7 @@ Gets user specific car by following parameters:
         {
           "displayName" : "My car",
           "carStatus" : "CURRENT",
-          "details" : {
+          "carDetails" : {
             "registrationNumber" : "XYZ123",
             "model" : "FOX",
             "derivative" : "FOX 55",
@@ -127,7 +127,7 @@ Gets user specific car by following parameters:
             "companyCarLeasedFrom" : null,
             "financed" : false,
             "purchaseType" : null,
-            "details" : {
+            "carDetails" : {
               "derivative" : "FOX 55",
               "engineCapacity" : 1.2,
               "fuelType" : "Petrol",
@@ -178,7 +178,7 @@ Returns a user data of 2 cars.
                                 "companyCarLeasedFrom" : null,
                                 "financed" : false,
                                 "purchaseType" : null,
-                                "details" : {
+                                "carDetails" : {
                                   "derivative" : "FOX 55",
                                   "engineCapacity" : 1.2,
                                   "fuelType" : "Petrol",
@@ -215,7 +215,7 @@ Returns a user data of 2 cars.
                                 "companyCarLeasedFrom" : null,
                                 "financed" : false,
                                 "purchaseType" : null,
-                                "details" : {
+                                "carDetails" : {
                                   "derivative" : "BlueMotion",
                                   "engineCapacity" : 1.2,
                                   "fuelType" : "Petrol",
@@ -276,7 +276,7 @@ Updates given car with new values
         {
           "displayName" : "My car",
           "carStatus" : "PREVIOUS",
-          "details" : {
+          "carDetails" : {
             "registrationNumber" : "XYZ123",
             "model" : "FOX",
             "derivative" : "FOX 55",
@@ -305,7 +305,7 @@ Updates given car with new values
             "companyCarLeasedFrom" : null,
             "financed" : false,
             "purchaseType" : null,
-            "details" : {
+            "carDetails" : {
               "derivative" : "FOX 55",
               "engineCapacity" : 1.2,
               "fuelType" : "Petrol",
@@ -364,7 +364,7 @@ Gets user specific car by following parameters:
             "companyCarLeasedFrom" : null,
             "financed" : true,
             "purchaseType" : "USED_CAR",
-            "details" : {
+            "carDetails" : {
               "derivative" : "GT Bluemotion 140",
               "engineCapacity" : 2.00,
               "fuelType" : "Diesel",
@@ -452,7 +452,7 @@ Gets user specific car by following parameters:
 Returns car details by following parameters:
 + regNo (required, string) - Car registration number in form of an String
 
-## Car details for reg number [/api/user/2.0/users/userId/carDetails/ABC123]
+## Car details for reg number [/api/user/2.0/users/userId/car/details/ABC123]
 ### Get car details for valid reg number [GET]
 Returns car details for valid registration number ABC123
 + Response 200 (application/json)
@@ -471,7 +471,7 @@ Returns car details for valid registration number ABC123
           }
         }
 
-## Car details for reg number [/api/user/2.0/users/userId/carDetails/{regNo}]
+## Car details for reg number [/api/user/2.0/users/userId/car/details/{regNo}]
 ### Get car details for invalid reg number [GET]
 Returns error for invalid registration number
 + Response 400 (application/json)
@@ -485,7 +485,7 @@ Returns error for invalid registration number
           ]
         }
 
-## Car details for reg number [/api/user/2.0/users/userId/carDetails/XXX009]
+## Car details for reg number [/api/user/2.0/users/userId/car/details/XXX009]
 ### Get car details for invalid reg number [GET]
 Returns error for non VW vechicle for reg number XXX009
 + Response 400 (application/json)
@@ -504,7 +504,7 @@ Returns error for non VW vechicle for reg number XXX009
 Owner details section
 
 
-## Owner details endpoint [/api/user/2.0/users/{userId}/cars/{carId}/ownerDetails]
+## Owner details endpoint [/api/user/2.0/users/{userId}/cars/{carId}/owner]
 ### Get owner details for given user and car id [GET]
 Returns error as no action by default 
 + Response 400 (application/json)
@@ -522,8 +522,8 @@ Returns error as no action by default
           ]
         }
 
-## Owner details endpoint [/api/user/2.0/users/1/cars/1/ownerDetails]
-### Get owner details for given user and car id [GET]
+## Owner details endpoint [/api/user/2.0/users/1/cars/1/owner]
+### Get owner details for given user and car id [POST]
 Returns owner details for specific user 1
 
 + Request (application/json)
