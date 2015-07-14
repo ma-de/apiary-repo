@@ -272,6 +272,12 @@ Gets user specific car by following parameters:
 Updates given car with new values - This is PATCH metod so you can update one or many fields inside carDetails. 
 Field displayName is mandatory. 
 
+
+Sending null values clean the values. 
+
+
+Sending "" empty string will throw the exception. 
+
 + Request (application/json)
 
         {
