@@ -268,25 +268,21 @@ Gets user specific car by following parameters:
         }
 
 
-### Update a car [PUT]
-Updates given car with new values 
+### Edit a car [PATCH]
+Updates given car with new values - THat's patch metod so you can update one or many fields
 
 + Request (application/json)
 
         {
-          "displayName" : "My car",
-          "carStatus" : "PREVIOUS",
-          "carDetails" : {
-            "registrationNumber" : "XYZ123",
-            "model" : "FOX",
-            "derivative" : "FOX 55",
-            "registrationDate" : "2010-11-30",
-            "fuelType" : "Petrol",
-            "vin" : "WVWZZZ5ZZA4118219",
-            "year" : "2010",
-            "engineCapacity" : 1.2,
-            "transmission" : "Manual"
-          }
+         "displayName": "name", 
+             "carDetails": {  
+                   "model": "model",
+                   "derivative": "FOX 55",
+                   "fuelType": "Petrol",
+                   "year": "2010",
+                   "engineCapacity": "1.2",
+                   "transmission": "Manual"
+             }    
         }
         
 + Response 200 (application/json)
