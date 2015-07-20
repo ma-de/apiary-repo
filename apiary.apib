@@ -697,6 +697,95 @@ Returns owner details for specific user 1
         }
 
 
-   
+## Group Configured cars
+User configured cars section
+
+
+## User configured cars endpoint [/api/user/entries/user/1/type/configuration/]
+### Get configured cars for given user [GET]
+Returns list of confirured cars
+
++ Response 200 (application/json)
+
+        {
+            [
+                {
+                    "id": "51068598-f495-460b-8940-e0296093f347",
+                    "dateCreated": "2015-03-12T16:05:26Z",
+                    "lastModified": "2015-03-12T16:05:26Z",
+                    "owner": {
+                        "id": "610082d5-8015-4ea9-aa4e-6feb76f1d0f6",
+                        "type": "user",
+                        "entryVersion": "1.0.0"
+                    },
+                    "type": "configuration",
+                    "entryVersion": "1.0.0",
+                    "data": {
+                        "upholstery": "n7d",
+                        "model": "golf-vii",
+                        "secured": true,
+                        "paint": "2t2t",
+                        "trimWebName": "Golf R-Line",
+                        "section": "overview",
+                        "price": 28125,
+                        "derivative": 2116,
+                        "showroomsDerivativeName": "Golf R-Line BlueMotion Technology 2.0 TDI 150PS 6spd 3dr Man",
+                        "name": "Test 3",
+                        "context": "preview",
+                        "trim": 2112,
+                        "ccd": false,
+                        "options": "2pu.pi1.znd"
+                    },
+                    "links": {
+                        "self": {
+                            "href": "http://192.168.33.10:8090/api/user/entries/51068598-f495-460b-8940-e0296093f347",
+                            "type": "application/json"
+                        },
+                        "owner": {
+                            "href": "http://192.168.33.10:8090/api/user/entries/610082d5-8015-4ea9-aa4e-6feb76f1d0f6",
+                            "type": "application/json"
+                        }
+                    }
+                },
+                {
+                    "id": "7e8ab03d-b288-4460-ba20-9c4a5fc6ff52",
+                    "dateCreated": "2015-03-12T15:44:40Z",
+                    "lastModified": "2015-03-12T15:44:40Z",
+                    "owner": {
+                        "id": "610082d5-8015-4ea9-aa4e-6feb76f1d0f6",
+                        "type": "user",
+                        "entryVersion": "1.0.0"
+                    },
+                    "type": "configuration",
+                    "entryVersion": "1.0.0",
+                    "data": {
+                        "upholstery": "n7d",
+                        "model": "golf-vii",
+                        "secured": true,
+                        "paint": "2t2t",
+                        "trimWebName": "Golf R-Line",
+                        "section": "overview",
+                        "price": 28125,
+                        "derivative": 2116,
+                        "showroomsDerivativeName": "Golf R-Line BlueMotion Technology 2.0 TDI 150PS 6spd 3dr Man",
+                        "name": "Test 3",
+                        "context": "preview",
+                        "trim": 2112,
+                        "ccd": false,
+                        "options": "2pu.pi1.znd"
+                    },
+                    "links": {
+                        "self": {
+                            "href": "http://192.168.33.10:8090/api/user/entries/7e8ab03d-b288-4460-ba20-9c4a5fc6ff52",
+                            "type": "application/json"
+                        },
+                        "owner": {
+                            "href": "http://192.168.33.10:8090/api/user/entries/610082d5-8015-4ea9-aa4e-6feb76f1d0f6",
+                            "type": "application/json"
+                        }
+                    }
+                }
+            ]
+        }
         
         
