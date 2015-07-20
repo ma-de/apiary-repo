@@ -343,7 +343,56 @@ Sending "" empty string will throw the exception.
             "lastUpdated" : "2015-05-08T13:32:10Z",
             "isMotDue" : false,
             "motDue" : null,
-            "links" : {}
+            "links" : {},
+            
+            "servicePlan" : {
+                "product" : "Fixed Price Servicing",
+                "startDate" : "2012-03-01",
+                "endDate" : "2015-02-28",
+                "contractLength" : 36
+            },        
+            "financePlan" : {
+                "productDescription" : "Hire Purchase",
+                "startDate" : "2013-03-15",
+                "endDate" : "2016-03-14"
+             },
+            "serviceHistory" : [
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00688",
+                    "name" : "Cheltenham Volkswagen"
+                  },
+                  "serviceDate" : "2010-03-18"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2011-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2012-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2013-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2014-07-20"
+                }
+            ]  
           }
         }
 
@@ -370,71 +419,187 @@ Gets user specific car by following parameters:
 
         {
           "car": {
-            "id" : "1",
-            "userId" : "2",
-            "displayName" : "VW Scirocco",
-            "carStatus" : "CURRENT",
-            "orderNumber" : null,
-            "deliveryPhaseStatement" : "",
-            "deliveryPhaseType" : null,
-            "deliveryLeadTimeStatement" : null,
-            "ownership" : "PRIVATE",
-            "companyCarLeasedFrom" : null,
-            "financed" : true,
-            "purchaseType" : "USED_CAR",
-            "carDetails" : {
-              "derivative" : "GT Bluemotion 140",
-              "engineCapacity" : 2.00,
-              "fuelType" : "Diesel",
-              "hasServicePlan" : null,
-              "hasWarranty" : null,
-              "model" : "Scirocco",
-              "registrationDate" : "2012-02-01",
-              "registrationNumber" : "VMN646",
-              "transmission" : "Manual",
-              "vin" : "WVWZZZ6RZCY193820",
-              "year":"2012"
-            },
-            "suppliedByRetailer" : {
-              "buildingName" : null,
-              "contactEmail" : "wilflowther@raymotors.com",
-              "contactName" : "WILF LOWTHER",
-              "county" : "ISLE OF MAN",
-              "dealerNo" : "00475",
-              "departmentType" : null,
-              "district" : null,
-              "isActive" : null,
-              "name" : "RAYMOTORS VOLKSWAGEN",
-              "postcode" : "IM8 2AB",
-              "street" : "PARLIAMENT SQUARE",
-              "telephone" : "01624 813000",
-              "town" : "RAMSEY"
-            },
-            "servicedByRetailer" : {
-              "buildingName" : null,
-              "contactEmail" : "tribalddbtech@gmail.com",
-              "contactName" : "Terry",
-              "county" : "ISLE OF MAN",
-              "dealerNo" : "00475",
-              "departmentType" : "Service",
-              "district" : null,
-              "isActive" : true,
-              "name" : "RAYMOTORS VOLKSWAGEN",
-              "postcode" : "IM8 2AB",
-              "street" : "PARLIAMENT SQUARE",
-              "telephone" : "01624 813011",
-              "town" : "RAMSEY"
-            },
-            "dateCreated" : "2013-12-20T20:17:27Z",
-            "lastUpdated" : "2015-05-22T16:26:58Z",
-            "isMotDue" : false,
-            "motDue" : "2016-02-01T00:00:00Z",
-            "links" : {}
+                               "id" : "1",
+                                "userId" : "2",
+                                "displayName" : "My fox",
+                                "carStatus" : "CURRENT",
+                                "orderNumber" : null,
+                                "deliveryPhaseStatement" : "",
+                                "deliveryPhaseType" : null,
+                                "deliveryLeadTimeStatement" : null,
+                                "ownership" : null,
+                                "companyCarLeasedFrom" : null,
+                                "financed" : false,
+                                "purchaseType" : null,
+                                "carDetails" : {
+                                  "derivative" : "Golf",
+                                  "engineCapacity" : 1.2,
+                                  "fuelType" : "Petrol",
+                                  "hasServicePlan" : null,
+                                  "hasWarranty" : null,
+                                  "model" : "Golf",
+                                  "registrationDate" : "2010-11-30",
+                                  "registrationNumber" : "XYZ123",
+                                  "transmission" : "Manual",
+                                  "vin" : "WVWZZZ5ZZA4118219",
+                                  "year" : "2010"
+                                },
+                                "suppliedByRetailer" : null,
+                                "servicedByRetailer" : null,
+                                "images" : null,
+                                "dateCreated" : "2015-05-08T13:32:10Z",
+                                "lastUpdated" : "2015-05-08T13:32:10Z",
+                                "isMotDue" : false,
+                                "motDue" : null,
+                                "links" : {},
+            
+            "servicePlan" : {
+                "product" : "Fixed Price Servicing",
+                "startDate" : "2012-03-01",
+                "endDate" : "2015-02-28",
+                "contractLength" : 36
+            },        
+            "financePlan" : {
+                "productDescription" : "Hire Purchase",
+                "startDate" : "2013-03-15",
+                "endDate" : "2016-03-14"
+             },
+            "serviceHistory" : [
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00688",
+                    "name" : "Cheltenham Volkswagen"
+                  },
+                  "serviceDate" : "2010-03-18"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2011-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2012-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2013-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2014-07-20"
+                }
+            ]   
           }
         }
 
+## User specific car data - by car id  [/api/user/2.0/users/2/cars/2]
+Returns a specific car data, filtered by user id and car id 
 
+### Get user 2 - car 2 data [GET]
+Gets user specific car by following parameters:
++ userid (required, number) - ID of the User in form of an integer
++ carid (required, number) - ID of the Car in form of an integer
 
++ Response 200 (application/json)
+
+        {
+          "car": {
+                                "id" : "2",
+                                "userId" : "2",
+                                "displayName" : "My passat",
+                                "carStatus" : "CURRENT",
+                                "orderNumber" : null,
+                                "deliveryPhaseStatement" : "",
+                                "deliveryPhaseType" : null,
+                                "deliveryLeadTimeStatement" : null,
+                                "ownership" : null,
+                                "companyCarLeasedFrom" : null,
+                                "financed" : false,
+                                "purchaseType" : null,
+                                "carDetails" : {
+                                  "derivative" : "BlueMotion",
+                                  "engineCapacity" : 1.2,
+                                  "fuelType" : "Petrol",
+                                  "hasServicePlan" : null,
+                                  "hasWarranty" : null,
+                                  "model" : "PASSAT-VIII",
+                                  "registrationDate" : "2010-11-30",
+                                  "registrationNumber" : "XYZ456",
+                                  "transmission" : "Manual",
+                                  "vin" : "WVWZZZ5ZZA4118456",
+                                  "year" : "2010"
+                                },
+                                "suppliedByRetailer" : null,
+                                "servicedByRetailer" : null,
+                                "images" : null,
+                                "dateCreated" : "2015-05-08T13:32:10Z",
+                                "lastUpdated" : "2015-05-08T13:32:10Z",
+                                "isMotDue" : false,
+                                "motDue" : null,
+                                "links" : {},
+            
+            "servicePlan" : {
+                "product" : "Fixed Price Servicing",
+                "startDate" : "2012-03-01",
+                "endDate" : "2015-02-28",
+                "contractLength" : 36
+            },        
+            "financePlan" : {
+                "productDescription" : "Hire Purchase",
+                "startDate" : "2013-03-15",
+                "endDate" : "2016-03-14"
+             },
+            "serviceHistory" : [
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00688",
+                    "name" : "Cheltenham Volkswagen"
+                  },
+                  "serviceDate" : "2010-03-18"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2011-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2012-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2013-07-20"
+                },
+                {
+                  "servicedByRetailer" : {
+                    "dealerNo" : "00548",
+                    "name" : "Inchcape Volkswagen Chester"
+                  },
+                  "serviceDate" : "2014-07-20"
+                }
+            ]   
+          }
+        }
 
 ## Group Car reg lookup
 Returns car details by following parameters:
@@ -532,87 +697,6 @@ Returns owner details for specific user 1
         }
 
 
-
-
-## Group DBG user details
-DBG user details
-
-
-## Service history endpoint [/api/user/2.0/users/{userId}/cars/{carId}/service-history]
-### Get service history for given user and car id [GET]
-Returns service history for this user car
-+ Response 200 (application/json)
-
-        {
-          "serviceHistory" : [
-            {
-              "servicedByRetailer" : {
-                "dealerNo" : "00688",
-                "name" : "Cheltenham Volkswagen"
-              },
-              "serviceDate" : "2010-03-18"
-            },
-            {
-              "servicedByRetailer" : {
-                "dealerNo" : "00548",
-                "name" : "Inchcape Volkswagen Chester"
-              },
-              "serviceDate" : "2011-07-20"
-            },
-            {
-              "servicedByRetailer" : {
-                "dealerNo" : "00548",
-                "name" : "Inchcape Volkswagen Chester"
-              },
-              "serviceDate" : "2012-07-20"
-            },
-            {
-              "servicedByRetailer" : {
-                "dealerNo" : "00548",
-                "name" : "Inchcape Volkswagen Chester"
-              },
-              "serviceDate" : "2013-07-20"
-            },
-            {
-              "servicedByRetailer" : {
-                "dealerNo" : "00548",
-                "name" : "Inchcape Volkswagen Chester"
-              },
-              "serviceDate" : "2014-07-20"
-            }
-          ]
-        }
-        
-        
-## Finance plan endpoint [/api/user/2.0/users/{userId}/cars/{carId}/finance-plan]
-### Get finance plan for given user and car id [GET]
-Returns finance plan for this user car
-+ Response 200 (application/json)
-
-        {
-          "financePlan" : {
-            "productDescription" : "Hire Purchase",
-            "startDate" : "2013-03-15",
-            "endDate" : "2016-03-14"
-          }
-        }
-        
-        
-## Service plan endpoint [/api/user/2.0/users/{userId}/cars/{carId}/service-plan]
-### Get service plan for given user and car id [GET]
-Returns service plan for this user car
-+ Response 200 (application/json)
-
-        {
-          "servicePlan" : {
-            "product" : "Fixed Price Servicing",
-            "startDate" : "2012-03-01",
-            "endDate" : "2015-02-28",
-            "contractLength" : 36
-          }
-        }
-         
- 
-         
+   
         
         
