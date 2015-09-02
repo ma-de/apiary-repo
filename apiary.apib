@@ -755,5 +755,354 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
             }
         ]
         
+
+
+
+
+## Service booking API endpoint [/api/user/booking/work-required]
+### Fetch list of work required [POST]
++ Request (application/json)
+
+        {
+            "dealerNumber": "00400",
+            "fuelType": "Petrol",
+            "transmission": "Manual",
+            "engineCapacity": "1",
+            "engineCode": "AAA",
+            "year": "2010",
+            "isLease": "false",
+            "derivative": "New Polo SE 1.2 TSI 90PS 5-speed Manual 5 Door",
+            "isRTCRetailer": "true"
+        }
         
++ Response 200 (application/json)
+
+        
+  "Servicing and MOT testing": [
+    [
+      {
+        "additionalInformation": "Basic servicing of your Volkswagen vehicle.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "1",
+        "id": 81,
+        "isRadio": true,
+        "jobCode": "MIN",
+        "labourHours": 0.7,
+        "mot": false,
+        "name": "Minor Service",
+        "periodicityDescription": "Every 1 year or 10,000 miles",
+        "price": 149,
+        "serviceId": 1,
+        "subHeading": "Servicing and MOT testing",
+        "type": "Servicing and MOT testing",
+        "typeOrder": 49
+      },
+      {
+        "additionalInformation": "A more detailed service of your Volkswagen. Should be alternated with minor services.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "1",
+        "id": 305,
+        "isRadio": true,
+        "jobCode": "MAJ",
+        "labourHours": 1.9,
+        "mot": false,
+        "name": "Major Service",
+        "periodicityDescription": "Every 24 months / 20,000 miles",
+        "price": 299,
+        "serviceId": 2,
+        "subHeading": "Servicing and MOT testing",
+        "type": "Servicing and MOT testing",
+        "typeOrder": 49
+      }
+    ]
+  ],
+  "Scheduled maintenance": [
+    [
+      {
+        "additionalInformation": "Recommended every year, a refresh treatment disinfects the evaporator and air ducts of your air conditioning system safely and effectively.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "2",
+        "id": 25621,
+        "isRadio": true,
+        "jobCode": "ACR",
+        "labourHours": 0.2,
+        "mot": false,
+        "name": "Air-conditioning refresh",
+        "periodicityDescription": null,
+        "price": 29,
+        "serviceId": 49,
+        "subHeading": "Air-Conditioning",
+        "type": "Scheduled maintenance",
+        "typeOrder": 50
+      },
+      {
+        "additionalInformation": "Recommended every two years. Over time your air-conditioning system loses gas. Unless it's replaced, your system will struggle to keep you cool.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "2",
+        "id": 1425,
+        "isRadio": true,
+        "jobCode": "ACS",
+        "labourHours": 1,
+        "mot": false,
+        "name": "Air-conditioning service (includes refresh)",
+        "periodicityDescription": "Every 2 years",
+        "price": 79,
+        "serviceId": 7,
+        "subHeading": "Air-Conditioning",
+        "type": "Scheduled maintenance",
+        "typeOrder": 50
+      }
+    ],
+    [
+      {
+        "additionalInformation": "The cambelt is one of the hardest working parts of your engine, driving major parts of the engine and keeping everything synchronised. Changing it prevents snaps, cracks and tears which in turn minimises the risk of major engine damage. ",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "3",
+        "id": 33679,
+        "isRadio": true,
+        "jobCode": "CAM",
+        "labourHours": 1,
+        "mot": false,
+        "name": "Cambelt",
+        "periodicityDescription": null,
+        "price": 399,
+        "serviceId": 48,
+        "subHeading": "Cambelt",
+        "type": "Scheduled maintenance",
+        "typeOrder": 50
+      },
+      {
+        "additionalInformation": "The cambelt is one of the hardest working parts of  your engine, driving major parts of the engine and keeping everything synchronised. Changing it prevents snaps, cracks and tears which in turn minimises the risk of major engine damage.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "3",
+        "id": 33680,
+        "isRadio": true,
+        "jobCode": "CWP",
+        "labourHours": 1,
+        "mot": false,
+        "name": "Cambelt and waterpump",
+        "periodicityDescription": null,
+        "price": 449,
+        "serviceId": 47,
+        "subHeading": "Cambelt",
+        "type": "Scheduled maintenance",
+        "typeOrder": 50
+      }
+    ],
+    [
+      {
+        "additionalInformation": "This should be done at year 3 and every 2 years after that. Brake fluid must withstand operating temperatures of up to 230C but over time absorbs water which boils at 100C. As the water boils, it turns to compressible vapour which means you won't be able to brake as efficiently.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "4",
+        "id": 1201,
+        "isRadio": false,
+        "jobCode": "BFS",
+        "labourHours": 0.5,
+        "mot": false,
+        "name": "Brake fluid change",
+        "periodicityDescription": "Every 2 years",
+        "price": 59,
+        "serviceId": 6,
+        "subHeading": "Other Scheduled Maintenance",
+        "type": "Scheduled maintenance",
+        "typeOrder": 50
+      }
+    ]
+  ],
+  "Unscheduled maintenance": [
+    [
+      {
+        "additionalInformation": "When you brake, the brake pads grip the brake discs that rotate with the wheels, slowing the car down. Both discs and pads can become worn and corroded, so it's vital they are checked regularly and replaced when they are worn at recommended replacement levels. ",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "5",
+        "id": 33681,
+        "isRadio": true,
+        "jobCode": "FBP",
+        "labourHours": 0.7,
+        "mot": false,
+        "name": "Front brake pads",
+        "periodicityDescription": null,
+        "price": 129,
+        "serviceId": 37,
+        "subHeading": "Front Brake Pads",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "When you brake, the brake pads grip the brake discs that rotate with the wheels, slowing the car down. Both discs and pads can become worn and corroded, so it's vital they are checked regularly and replaced when they are worn at recommended replacement levels.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "5",
+        "id": 33683,
+        "isRadio": true,
+        "jobCode": "FBD",
+        "labourHours": 0.9,
+        "mot": false,
+        "name": "Front brake pads and discs",
+        "periodicityDescription": null,
+        "price": 249,
+        "serviceId": 38,
+        "subHeading": "Front Brake Pads",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      }
+    ],
+    [
+      {
+        "additionalInformation": "When you brake, the brake pads grip the brake discs that rotate with the wheels, slowing the car down. Both discs and pads can become worn and corroded, so it's vital they are checked regularly and replaced when they are worn at recommended replacement levels.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "6",
+        "id": 33682,
+        "isRadio": true,
+        "jobCode": "RBP",
+        "labourHours": 1.3,
+        "mot": false,
+        "name": "Rear brake pads",
+        "periodicityDescription": null,
+        "price": 129,
+        "serviceId": 39,
+        "subHeading": "Rear Brake Pads",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "When you brake, the brake pads grip the brake discs that rotate with the wheels, slowing the car down. Both discs and pads can become worn and corroded, so it's vital they are checked regularly and replaced when they are worn at recommended replacement levels.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "6",
+        "id": 33684,
+        "isRadio": true,
+        "jobCode": "RBD",
+        "labourHours": 1.1,
+        "mot": false,
+        "name": "Rear brake pads and discs",
+        "periodicityDescription": null,
+        "price": 249,
+        "serviceId": 40,
+        "subHeading": "Rear Brake Pads",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      }
+    ],
+    [
+      {
+        "additionalInformation": "If your battery has low charge or isn't holding it's charge, it may prevent your car from starting.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "7",
+        "id": 6801,
+        "isRadio": false,
+        "jobCode": "BAT",
+        "labourHours": 0.2,
+        "mot": false,
+        "name": "Fully fitted battery replacement",
+        "periodicityDescription": null,
+        "price": 69,
+        "serviceId": 31,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "Helps to silence engine noise and reduce emissions.    ",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "7",
+        "id": 7025,
+        "isRadio": false,
+        "jobCode": "RES",
+        "labourHours": 0.7,
+        "mot": false,
+        "name": "Fully fitted rear exhaust",
+        "periodicityDescription": null,
+        "price": 155,
+        "serviceId": 32,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "Shock absorbers make your drive smoother and easier.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "7",
+        "id": 7249,
+        "isRadio": false,
+        "jobCode": "FSA",
+        "labourHours": 2.2,
+        "mot": false,
+        "name": "Fully fitted front shock absorbers",
+        "periodicityDescription": null,
+        "price": 275,
+        "serviceId": 33,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "Shock absorbers make your drive smoother and easier.",
+        "category": 1,
+        "engineCode": "AAA",
+        "groupOrder": "7",
+        "id": 7473,
+        "isRadio": false,
+        "jobCode": "RSA",
+        "labourHours": 0.9,
+        "mot": false,
+        "name": "Fully fitted rear shock absorbers",
+        "periodicityDescription": null,
+        "price": 145,
+        "serviceId": 34,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "This might be a travel check or a summer check or an EVC.  ",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "7",
+        "id": 7697,
+        "isRadio": false,
+        "jobCode": "WHC",
+        "labourHours": 1,
+        "mot": false,
+        "name": "Summer check",
+        "periodicityDescription": "",
+        "price": 25,
+        "serviceId": 35,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      },
+      {
+        "additionalInformation": "This accessory is a device that upgrades an analogue radio to a digital radio.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "7",
+        "id": 7921,
+        "isRadio": false,
+        "jobCode": "DRAD",
+        "labourHours": 1,
+        "mot": false,
+        "name": "Fully fitted digital radio upgrade",
+        "periodicityDescription": null,
+        "price": 289,
+        "serviceId": 36,
+        "subHeading": "Other Unscheduled Maintenance",
+        "type": "Unscheduled maintenance",
+        "typeOrder": 51
+      }
+    ]
+  ]
+}
         
