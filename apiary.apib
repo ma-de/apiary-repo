@@ -777,7 +777,7 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
         
 + Response 200 (application/json)
 
-       {
+    {
   "Servicing and MOT testing": [
     [
       {
@@ -812,6 +812,26 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
         "periodicityDescription": "Every 24 months / 20,000 miles",
         "price": 299,
         "serviceId": 2,
+        "subHeading": "Servicing and MOT testing",
+        "type": "Servicing and MOT testing",
+        "typeOrder": 49
+      }
+    ],
+    [
+      {
+        "additionalInformation": "Basic servicing of your Volkswagen vehicle.",
+        "category": 1,
+        "engineCode": null,
+        "groupOrder": "1",
+        "id": 81,
+        "isRadio": false,
+        "jobCode": "MIN",
+        "labourHours": 0.7,
+        "mot": true,
+        "name": "MOT",
+        "periodicityDescription": "Every 12 months",
+        "price": 40,
+        "serviceId": 1,
         "subHeading": "Servicing and MOT testing",
         "type": "Servicing and MOT testing",
         "typeOrder": 49
@@ -1077,7 +1097,7 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
         "labourHours": 1,
         "mot": false,
         "name": "Summer check",
-        "periodicityDescription": "",
+        "periodicityDescription": null,
         "price": 25,
         "serviceId": 35,
         "subHeading": "Other Unscheduled Maintenance",
@@ -1104,5 +1124,7 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
       }
     ]
   ]
-} 
+}
+       
+ 
   
