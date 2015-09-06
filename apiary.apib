@@ -1125,6 +1125,60 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
     ]
   ]
 }
-       
- 
+   
+   
+## Get convenience options [/api/user/booking/convenience-options]
+### Fetch list of convenience options [POST]
++ Request (application/json)
+
+       {
+            "dealerNumber": "00400",
+            "isRTCRetailer":"true",
+            "workOption":"81,305"
+        }
+        
++ Response 200 (application/json)
+
+    {  
+   "isMOTSelected":false,
+   "options":[  
+      {  
+         "additionalInformation":"You will drop your car off with the retailer at the arranged time and collect it when the service  is complete.",
+         "courtesyLift":false,
+         "courtesyOption":false,
+         "id":3381,
+         "isRadio":true,
+         "jobCode":null,
+         "leadDate":"27-07-2015",
+         "leadTime":1,
+         "name":"Not required",
+         "order":12,
+         "price":0,
+         "requiresCollection":false,
+         "requiresDelivery":false,
+         "requiresInsurance":false,
+         "subHeading":"You drop off and collect your car"
+      },
+      {  
+         "additionalInformation":"Wait while we repair your car.",
+         "courtesyLift":false,
+         "courtesyOption":false,
+         "id":4998,
+         "isRadio":true,
+         "jobCode":"WAIT",
+         "leadDate":"27-07-2015",
+         "leadTime":0,
+         "name":"Waiting Job",
+         "order":19,
+         "price":0,
+         "requiresCollection":false,
+         "requiresDelivery":false,
+         "requiresInsurance":false,
+         "subHeading":""
+      }
+   ],
+   "requiresDOB":true,
+   "serviceCodes":"MIN:0.7,MAJ:1.9",
+   "waitingJob":false
+ }
   
