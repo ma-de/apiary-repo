@@ -415,6 +415,8 @@ Gets user specific car by following parameters:
 + userid (required, number) - ID of the User in form of an integer
 + carid (required, number) - ID of the Car in form of an integer
 
+Response shown with example POLK data
+
 + Response 200 (application/json)
 
         {
@@ -500,7 +502,29 @@ Gets user specific car by following parameters:
                   },
                   "serviceDate" : "2014-07-20"
                 }
-            ]   
+            ],
+            "afterSalesPolk": [
+                {
+                    "dbgId" : "1",
+                    "VehicleKey" : "99",
+                    "EventDueDateMod" : "2015-06-15 02:13:45",
+                    "FirstProvidedDateMod" : "2015-06-15 02:13:45",
+                    "LastProvidedDateMod" : "2015-06-15 02:13:45",
+                    "EventTypeId" : "RS",
+                    "PredictedEvent" : "Predicted event",
+                    "PredictedEventDescription" : "Predicted Event Description",
+                    "MappedMVC" : "Mapped MVC",
+                    "MappedMVCDescription" : "Mapped MVC Description",
+                    "EventBrandName" : "Event Brand Name",
+                    "EventCountryCode" : "Event Country Code",
+                    "Surname" : "Surname",
+                    "Postcode" : "Postcode",
+                    "EventMileageInterval" : "120",
+                    "EventTimeInterval" : "23",
+                    "PredictedMileageNextService" : "2000",
+                    "IsCurrent" : "Y"
+                }
+            ]
           }
         }
 
@@ -511,6 +535,8 @@ Returns a specific car data, filtered by user id and car id
 Gets user specific car by following parameters:
 + userid (required, number) - ID of the User in form of an integer
 + carid (required, number) - ID of the Car in form of an integer
+
+Response shown with empty POLK data (no POLK data available for car)
 
 + Response 200 (application/json)
 
@@ -597,7 +623,8 @@ Gets user specific car by following parameters:
                   },
                   "serviceDate" : "2014-07-20"
                 }
-            ]   
+            ],
+            "afterSalesPolk": []
           }
         }
 
