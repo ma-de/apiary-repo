@@ -19,7 +19,7 @@ Resources related to Users in the API. Returns array of cars objects with follow
 
 ## Cars data [/api/user/2.0/users/{userid}/cars]
 Gets user specific car by following parameters:
-+ userid (required, number) - ID of the User in form of an integer
++ userid (required, number) - ID of the User in form of a UUID
 
 ### Get incorrect car [GET]
 Returns error as there is no random car.
@@ -40,59 +40,770 @@ Returns error as there is no random car.
 
 
 
-## User 1 with 1 cars [/api/user/2.0/users/1/cars]
+## User with cars [/api/user/2.0/users/f47eab4b-61ad-4393-a068-0c5e28dbb09c/cars]
 Gets user specific car by following parameters:
-+ userid (required, number) - ID of the User in form of an integer
++ userid (required, number) - ID of the User in form of UUID
 
 
-### Get user 1 cars [GET]
+### Get cars for user f47eab4b-61ad-4393-a068-0c5e28dbb09c [GET]
 + Response 200 (application/json)
     + Body
-        
+    
+            {
+                "cars": [
+                    {   
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": null,
+                            "derivative": "e-up!  82 PS electric motor 5 Door",
+                            "engineCapacity": null,
+                            "engineNumber": null,
+                            "fuelType": null,
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "e-up!",
+                            "modelMark": null,
+                            "registrationDate": null,
+                            "registrationNumber": null,
+                            "transmission": null,
+                            "vin": null,
+                            "year": null
+                        },
+                        "carStatus": "ORDERED",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-10-08T10:47:30Z",
+                        "deliveryLeadTimeStatement": "Your car is in the final stage of its journey to your retailer, where it will undergo its final preparation for collection. Your retailer will be in contact soon to arrange handover.",
+                        "deliveryPhaseStatement": "Stage 7: Your car has arrived",
+                        "deliveryPhaseType": "YOUR_CAR_HAS_ARRIVED",
+                        "displayName": "lastCar2",
+                        "financed": false,
+                        "id": "402849e74680fc100146852ce58c004f",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": null,
+                        "lastUpdated": "2015-11-04T15:06:59Z",
+                        "links": {
+                            
+                        },
+                        "motDue": null,
+                        "orderNumber": "24204698",
+                        "ownership": null,
+                        "purchaseType": null,
+                        "servicedByRetailer": null,
+                        "suppliedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Brian Moore",
+                            "county": null,
+                            "dealerNo": "00706",
+                            "departmentType": null,
+                            "district": "Newbridge",
+                            "isActive": null,
+                            "name": "Western Volkswagen (Edinburgh West)",
+                            "postcode": "EH28 8TH",
+                            "street": "1 Hallbarns Crescent",
+                            "telephone": "01312970601",
+                            "town": "Edinburgh"
+                        },
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
                 {
-                  "cars" : [
-                            {
-                              "car": {
-                                "id" : "FF3",
-                                "userId" : "1",
-                                "displayName" : "My car",
-                                "carStatus" : "CURRENT",
-                                "orderNumber" : null,
-                                "deliveryPhaseStatement" : "",
-                                "deliveryPhaseType" : null,
-                                "deliveryLeadTimeStatement" : null,
-                                "ownership" : null,
-                                "companyCarLeasedFrom" : null,
-                                "financed" : false,
-                                "purchaseType" : null,
-                                "carDetails" : {
-                                  "derivative" : "FOX 55",
-                                  "engineCapacity" : 1.2,
-                                  "fuelType" : "Petrol",
-                                  "hasServicePlan" : null,
-                                  "hasWarranty" : null,
-                                  "model" : "FOX",
-                                  "registrationDate" : "2010-11-30",
-                                  "registrationNumber" : "XYZ123",
-                                  "transmission" : "Manual",
-                                  "vin" : "WVWZZZ5ZZA4118219",
-                                  "year" : "2010"
-                                },
-                                "suppliedByRetailer" : null,
-                                "servicedByRetailer" : null,
-                                "images" : null,
-                                "dateCreated" : "2015-05-08T13:32:10Z",
-                                "lastUpdated" : "2015-05-08T13:32:10Z",
-                                "isMotDue" : false,
-                                "motDue" : null,
-                                "links" : {}
-                              }
-                            } 
-                    ]
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": null,
+                            "derivative": "e-up!  82 PS electric motor 5 Door",
+                            "engineCapacity": null,
+                            "engineNumber": null,
+                            "fuelType": null,
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "e-up!",
+                            "modelMark": null,
+                            "registrationDate": null,
+                            "registrationNumber": null,
+                            "transmission": null,
+                            "vin": null,
+                            "year": null
+                        },
+                        "carStatus": "ORDERED",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-10-07T14:47:30Z",
+                        "deliveryLeadTimeStatement": "Your car is in the final stage of its journey to your retailer, where it will undergo its final preparation for collection. Your retailer will be in contact soon to arrange handover.",
+                        "deliveryPhaseStatement": "Stage 7: Your car has arrived",
+                        "deliveryPhaseType": "YOUR_CAR_HAS_ARRIVED",
+                        "displayName": "car",
+                        "financed": false,
+                        "id": "402849e74680fc100146852ce58c006f",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": null,
+                        "lastUpdated": "2015-11-19T08:44:10Z",
+                        "links": {
+                            
+                        },
+                        "motDue": null,
+                        "orderNumber": "24204698",
+                        "ownership": null,
+                        "purchaseType": null,
+                        "servicedByRetailer": null,
+                        "suppliedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Brian Moore",
+                            "county": null,
+                            "dealerNo": "00706",
+                            "departmentType": null,
+                            "district": "Newbridge",
+                            "isActive": null,
+                            "name": "Western Volkswagen (Edinburgh West)",
+                            "postcode": "EH28 8TH",
+                            "street": "1 Hallbarns Crescent",
+                            "telephone": "01312970601",
+                            "town": "Edinburgh"
+                        },
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "COUPE",
+                            "derivative": "SCIROCCO GT BLUEMOTN TECH manual",
+                            "engineCapacity": 2,
+                            "engineNumber": null,
+                            "fuelType": "Diesel",
+                            "hasServicePlan": false,
+                            "hasWarranty": false,
+                            "isCurrentProductApiModel": true,
+                            "model": "Scirocco",
+                            "modelMark": null,
+                            "registrationDate": "2014-10-15T00:00:00Z",
+                            "registrationNumber": "VK64YUF",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ1FZ8V001479",
+                            "year": "2014"
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-09-22T07:40:38Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "ServiceTracking Car",
+                        "financed": false,
+                        "id": "ff8080814fe15612014ff3fc8b9c006a",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-12-16T11:28:48Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2017-10-15T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": "NEW_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Mike Davies",
+                            "county": "Cheshire",
+                            "dealerNo": "00705",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Inchcape Volkswagen (Altrincham)",
+                            "postcode": "WA14 4PJ",
+                            "street": "Manchester Road",
+                            "telephone": "0161 825 8006",
+                            "town": "Altrincham"
+                        },
+                        "suppliedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "James Dent",
+                            "county": null,
+                            "dealerNo": "00096",
+                            "departmentType": null,
+                            "district": null,
+                            "isActive": null,
+                            "name": "Twickenham Volkswagen",
+                            "postcode": "TW2 5NT",
+                            "street": "40 South Road",
+                            "telephone": "02038057887",
+                            "town": "Twickenham"
+                        },
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": null,
+                            "engineCapacity": 1.4,
+                            "engineNumber": null,
+                            "fuelType": "Petrol",
+                            "hasServicePlan": false,
+                            "hasWarranty": false,
+                            "isCurrentProductApiModel": false,
+                            "model": "passat cc",
+                            "modelMark": "A05",
+                            "registrationDate": "2013-05-17T00:00:00Z",
+                            "registrationNumber": "41NHY",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ6RZDU052496",
+                            "year": "2013"
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-10-13T14:41:43Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "41NHY",
+                        "financed": false,
+                        "id": "ff8080815060bfb1015061a65b5d001b",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-11-11T11:01:23Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2016-05-17T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": "NEW_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": null,
+                            "county": "Berkshire",
+                            "dealerNo": "00349",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Windrush Volkswagen (Slough)",
+                            "postcode": "SL1 3TN",
+                            "street": "57 Farnham Road",
+                            "telephone": "01753 670200",
+                            "town": "Slough"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "<h1>GOLF PLUS SE TDI</h1>",
+                            "engineCapacity": 1.9,
+                            "engineNumber": null,
+                            "fuelType": "Diesel",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "<h1>Golf</h1>",
+                            "modelMark": "5M",
+                            "registrationDate": "2006-03-15T00:00:00Z",
+                            "registrationNumber": "FE06KHO",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ1KZ6W597938",
+                            "year": null
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-10-26T16:21:30Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "<h1>My Golf</h1>",
+                        "financed": false,
+                        "id": "ff80808150a48bdd0150a4f45fac0001",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-11-05T09:25:20Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2016-03-15T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": null,
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Mike Davies",
+                            "county": "Cheshire",
+                            "dealerNo": "00705",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Inchcape Volkswagen (Altrincham)",
+                            "postcode": "WA14 4PJ",
+                            "street": "Manchester Road",
+                            "telephone": "0161 825 8006",
+                            "town": "Altrincham"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "POLO MATCH 60",
+                            "engineCapacity": 1,
+                            "engineNumber": null,
+                            "fuelType": "Hyb-petrol",
+                            "hasServicePlan": false,
+                            "hasWarranty": true,
+                            "isCurrentProductApiModel": true,
+                            "model": "Polo",
+                            "modelMark": "A05",
+                            "registrationDate": "2012-05-31T00:00:00Z",
+                            "registrationNumber": "RJ12FNK",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ6RZCU038197",
+                            "year": "2012"
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-03T13:56:26Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "My Polo",
+                        "financed": true,
+                        "id": "ff80808150c8a58d0150cda272500004",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-12-18T10:40:23Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2016-05-30T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": "PRIVATE",
+                        "purchaseType": "NEW_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Howard Steele",
+                            "county": "Dumfries & Galloway",
+                            "dealerNo": "00812",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "McCreadie Volkswagen",
+                            "postcode": "DG8 6JR",
+                            "street": "45 Queen Street",
+                            "telephone": "01671 402112",
+                            "town": "Newton Stewart"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "BEETLE LUNA 102PS",
+                            "engineCapacity": 1.6,
+                            "engineNumber": null,
+                            "fuelType": "Petrol",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "Beetle",
+                            "modelMark": null,
+                            "registrationDate": "2005-12-05T00:00:00Z",
+                            "registrationNumber": "SY55YLB",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ9CZ6M502556",
+                            "year": null
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-20T15:15:01Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "My Beetle",
+                        "financed": false,
+                        "id": "ff808081512071ff0151257680890002",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": true,
+                        "lastUpdated": "2015-11-20T15:15:01Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2015-12-05T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": null,
+                        "servicedByRetailer": null,
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "BEETLE LUNA 102PS",
+                            "engineCapacity": 1.6,
+                            "engineNumber": null,
+                            "fuelType": "Petrol",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "Beetle",
+                            "modelMark": null,
+                            "registrationDate": "2005-12-05T00:00:00Z",
+                            "registrationNumber": "SY55YLB",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ9CZ6M502556",
+                            "year": null
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-20T15:15:02Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "My Beetle",
+                        "financed": false,
+                        "id": "ff808081512071ff01512576810d0003",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": true,
+                        "lastUpdated": "2015-11-20T15:15:02Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2015-12-05T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": null,
+                        "servicedByRetailer": null,
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "GOLF PLUS SE TDI S-A",
+                            "engineCapacity": 2,
+                            "engineNumber": null,
+                            "fuelType": "Diesel",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": false,
+                            "model": "Golf",
+                            "modelMark": "52",
+                            "registrationDate": "2011-05-27T00:00:00Z",
+                            "registrationNumber": "CX11YWS",
+                            "transmission": "Automatic",
+                            "vin": "WVWZZZ1KZBW582970",
+                            "year": "2011"
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-23T12:13:23Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "CX11YWS",
+                        "financed": false,
+                        "id": "ff808081512bb23a0151344349e10002",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-11-24T10:20:36Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2016-05-27T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": "USED_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Mike Davies",
+                            "county": "Cheshire",
+                            "dealerNo": "00705",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Inchcape Volkswagen (Altrincham)",
+                            "postcode": "WA14 4PJ",
+                            "street": "Manchester Road",
+                            "telephone": "0161 825 8006",
+                            "town": "Altrincham"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "GOLF MATCH TDI BLUE TECH",
+                            "engineCapacity": 2,
+                            "engineNumber": null,
+                            "fuelType": "Diesel",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "Golf",
+                            "modelMark": "MK6",
+                            "registrationDate": "2012-07-11T00:00:00Z",
+                            "registrationNumber": "DF12EBK",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ1KZCP140421",
+                            "year": "2012"
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-23T12:23:45Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "DF12EBK",
+                        "financed": false,
+                        "id": "ff808081512bb23a0151344cc5690005",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": false,
+                        "lastUpdated": "2015-11-24T10:20:37Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2016-07-11T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": "USED_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Mike Davies",
+                            "county": "Cheshire",
+                            "dealerNo": "00705",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Inchcape Volkswagen (Altrincham)",
+                            "postcode": "WA14 4PJ",
+                            "street": "Manchester Road",
+                            "telephone": "0161 825 8006",
+                            "town": "Altrincham"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carDetails": {
+                            "bodyStyle": "HATCHBACK",
+                            "derivative": "POLO BLUEMOTION TDI",
+                            "engineCapacity": 1.2,
+                            "engineNumber": null,
+                            "fuelType": "Diesel",
+                            "hasServicePlan": null,
+                            "hasWarranty": null,
+                            "isCurrentProductApiModel": true,
+                            "model": "Polo",
+                            "modelMark": "A05",
+                            "registrationDate": "2010-11-30T00:00:00Z",
+                            "registrationNumber": "FV60WKN",
+                            "transmission": "Manual",
+                            "vin": "WVWZZZ6RZBY099468",
+                            "year": null
+                        },
+                        "carStatus": "CURRENT",
+                        "companyCarLeasedFrom": null,
+                        "dateCreated": "2015-11-23T14:38:13Z",
+                        "deliveryLeadTimeStatement": null,
+                        "deliveryPhaseStatement": "",
+                        "deliveryPhaseType": null,
+                        "displayName": "FV60WKN",
+                        "financed": false,
+                        "id": "ff808081512bb23a015134c7e1630010",
+                        "images": [
+                            
+                        ],
+                        "isMotDue": true,
+                        "lastUpdated": "2015-11-24T10:20:41Z",
+                        "links": {
+                            
+                        },
+                        "motDue": "2015-11-30T00:00:00.000Z",
+                        "orderNumber": null,
+                        "ownership": null,
+                        "purchaseType": "USED_CAR",
+                        "servicedByRetailer": {
+                            "buildingName": null,
+                            "contactEmail": "tribalddbtech@gmail.com",
+                            "contactName": "Mike Davies",
+                            "county": "Cheshire",
+                            "dealerNo": "00705",
+                            "departmentType": "Service",
+                            "district": null,
+                            "isActive": true,
+                            "name": "Inchcape Volkswagen (Altrincham)",
+                            "postcode": "WA14 4PJ",
+                            "street": "Manchester Road",
+                            "telephone": "0161 825 8006",
+                            "town": "Altrincham"
+                        },
+                        "suppliedByRetailer": null,
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carStatus": "CONFIGURED",
+                        "data": {
+                            "ccd": false,
+                            "context": "publish",
+                            "derivative": 1842,
+                            "model": "polo-gp",
+                            "name": "POLOConfigured",
+                            "options": "1xh.stee.zbb",
+                            "paint": "5k5k",
+                            "price": 11300,
+                            "section": "overview",
+                            "secured": true,
+                            "showroomsDerivativeName": "New Polo S 1.0 BlueMotion Technology 60PS 5spd 3dr Man",
+                            "trim": 1841,
+                            "trimWebName": "New Polo S",
+                            "upholstery": "n0vby"
+                        },
+                        "dateCreated": "2015-11-12T10:16:49Z",
+                        "displayName": "POLOConfigured",
+                        "id": "e9e802f1-43f7-4693-a5a3-096990a912f1",
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carStatus": "CONFIGURED",
+                        "data": {
+                            "ccd": false,
+                            "context": "publish",
+                            "derivative": 1247,
+                            "model": "up-nf",
+                            "name": "HighUp",
+                            "options": "1mh.c3m.qv3.s22",
+                            "paint": "g2g2",
+                            "price": 11500,
+                            "section": "overview",
+                            "secured": true,
+                            "showroomsDerivativeName": "High up! 1.0 75PS 5spd 3dr Man",
+                            "trim": 1243,
+                            "trimWebName": "High up!",
+                            "upholstery": "n4ejk5mc"
+                        },
+                        "dateCreated": "2015-09-22T07:33:07Z",
+                        "displayName": "HighUp",
+                        "id": "ef4ab76e-5dbc-4818-b54e-51988ab0e785",
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
+                },
+                {
+                    "car": {
+                        "carStatus": "CONFIGURED",
+                        "data": {
+                            "ccd": false,
+                            "context": "preview",
+                            "derivative": 1247,
+                            "model": "up-nf",
+                            "name": "HighUp2",
+                            "options": "1mh.c3m.qv3.s22",
+                            "paint": "g2g2",
+                            "price": 11500,
+                            "section": "overview",
+                            "secured": false,
+                            "showroomsDerivativeName": "High up! 1.0 75PS 5spd 3dr Man",
+                            "trim": 1243,
+                            "trimWebName": "High up!",
+                            "upholstery": "n4ejk5mc",
+                            "uuid": "ef4ab76e-5dbc-4818-b54e-51988ab0e787"
+                        },
+                        "dateCreated": "2015-09-22T07:33:07Z",
+                        "displayName": "HighUp2",
+                        "id": "ef4ab76e-5dbc-4818-b54e-51988ab0e787",
+                        "userId": "f47eab4b-61ad-4393-a068-0c5e28dbb09c"
+                    }
                 }
+            ],
+            "images": {
+                "high": {
+                    "current_beetle": "http://www.volkswagen.co.uk/assets/content/mobile/high/beetle.jpg",
+                    "current_golf": "http://www.volkswagen.co.uk/assets/content/mobile/high/golf.jpg",
+                    "current_h1golfh1": "http://www.volkswagen.co.uk/assets/content/mobile/high/default.jpg",
+                    "current_passat-cc": "http://www.volkswagen.co.uk/assets/content/mobile/high/passat-cc.jpg",
+                    "current_polo": "http://www.volkswagen.co.uk/assets/content/mobile/high/polo.jpg",
+                    "current_scirocco": "http://www.volkswagen.co.uk/assets/content/mobile/high/scirocco.jpg",
+                    "ordered_eup": "http://www.volkswagen.co.uk/assets/content/mobile/high/vdt.jpg",
+                    "static-account": "http://www.volkswagen.co.uk/assets/content/mobile/high/static-account.jpg",
+                    "static-add-a-car": "http://www.volkswagen.co.uk/assets/content/mobile/high/static-add-a-car.jpg",
+                    "static-offers": "http://www.volkswagen.co.uk/assets/content/mobile/high/static-offers.jpg"
+                },
+                "low": {
+                    "current_beetle": "http://www.volkswagen.co.uk/assets/content/mobile/low/beetle.jpg",
+                    "current_golf": "http://www.volkswagen.co.uk/assets/content/mobile/low/golf.jpg",
+                    "current_h1golfh1": "http://www.volkswagen.co.uk/assets/content/mobile/low/default.jpg",
+                    "current_passat-cc": "http://www.volkswagen.co.uk/assets/content/mobile/low/passat-cc.jpg",
+                    "current_polo": "http://www.volkswagen.co.uk/assets/content/mobile/low/polo.jpg",
+                    "current_scirocco": "http://www.volkswagen.co.uk/assets/content/mobile/low/scirocco.jpg",
+                    "ordered_eup": "http://www.volkswagen.co.uk/assets/content/mobile/low/vdt.jpg",
+                    "static-account": "http://www.volkswagen.co.uk/assets/content/mobile/low/static-account.jpg",
+                    "static-add-a-car": "http://www.volkswagen.co.uk/assets/content/mobile/low/static-add-a-car.jpg",
+                    "static-offers": "http://www.volkswagen.co.uk/assets/content/mobile/low/static-offers.jpg"
+                },
+                "thumbnails": {
+                    "current_beetle": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/beetle.jpg",
+                    "current_golf": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/golf.jpg",
+                    "current_h1golfh1": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/default.jpg",
+                    "current_passat-cc": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/passat-cc.jpg",
+                    "current_polo": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/polo.jpg",
+                    "current_scirocco": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/scirocco.jpg",
+                    "ordered_eup": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/vdt.jpg",
+                    "static-account": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/static-account.jpg",
+                    "static-add-a-car": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/static-add-a-car.jpg",
+                    "static-offers": "http://www.volkswagen.co.uk/assets/content/mobile/thumbnails/static-offers.jpg"
+                }
+            }
+            }
 
-
-### Create user for user 1 [POST]
+### Create car for user f47eab4b-61ad-4393-a068-0c5e28dbb09c [POST]
 + Request (application/json)
 
         {
