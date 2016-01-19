@@ -2230,3 +2230,282 @@ Request Headers x-auth-token: A_VALID_AUTH_TOKEN
     "waitingJob": false
     }
   
+  
+## Car inspections report endpoint [/api/manheim-service/0.2/retailers/00111/booked-services/10c9b8a0-7006-4b64-82bc-db412ef48456/inspection]
+Returns list of confirured cars 
+### Get configured cars for given user [GET]
+Request Headers x-auth-token: A_VALID_AUTH_TOKEN
+
++ Request (application/json)
+
+    + Headers
+    
+            x-auth-token: ZDIxNGM4OGMtZDgxNy00NDljLThkMmQtM2E0ODE5YTM2NjkxOjE0MDUxNzk1MzczMjA6NmU3NGQ1OGJjZWVkYjhhYTljYWQyZjc1NjNmNjNiNWFlNDNmZGI0M2Q5YjNlZTk4MGJlZGFhY2Y3MzY1YWY5Ng==
+            
++ Response 200 (application/json)
+  
+{
+  "inspectionItems": [
+    {
+      "isTyre": false,
+      "itemId": "2",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "1",
+        "name": "Internal"
+      },
+      "followUpDate": "2015-10-19T23:00:00Z",
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Red",
+      "subSection": {
+        "id": "7",
+        "name": "Clutch/Gearbox/Differential"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "3",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "1",
+        "name": "Internal"
+      },
+      "followUpDate": null,
+      "itemPrice": 178.2,
+      "outcomeStatus": "Approved",
+      "severity": "Red",
+      "subSection": {
+        "id": "1",
+        "name": "Warning Lamps"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "5",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "4",
+        "name": "Brakes and Bearings"
+      },
+      "followUpDate": null,
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Red",
+      "subSection": {
+        "id": "6",
+        "name": "Rear Wheel Bearings"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "6",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "5",
+        "name": "Underbody and Suspension"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": null,
+      "subSection": {
+        "id": "4",
+        "name": "Oil leaks"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "7",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "5",
+        "name": "Underbody and Suspension"
+      },
+      "followUpDate": null,
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Red",
+      "subSection": {
+        "id": "4",
+        "name": "Oil leaks"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "8",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "6",
+        "name": "Other "
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": null,
+      "subSection": {
+        "id": "5",
+        "name": "Air Conditioning"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "9",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "6",
+        "name": "Other "
+      },
+      "followUpDate": "2015-11-25T00:00:00Z",
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Amber",
+      "subSection": {
+        "id": "5",
+        "name": "Air Conditioning"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "10",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "1",
+        "name": "Internal"
+      },
+      "followUpDate": "2016-01-14T00:00:00Z",
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Amber",
+      "subSection": {
+        "id": "7",
+        "name": "Clutch/Gearbox/Differential"
+      }
+    },
+    {
+      "isTyre": false,
+      "itemId": "11",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "4",
+        "name": "Brakes and Bearings"
+      },
+      "followUpDate": null,
+      "itemPrice": 324,
+      "outcomeStatus": "Approved",
+      "severity": "Red",
+      "subSection": {
+        "id": "6",
+        "name": "Rear Wheel Bearings"
+      }
+    },
+    {
+      "isTyre": true,
+      "itemId": "12",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "7",
+        "name": "Tyres"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": "Green",
+      "subSection": {
+        "id": "1",
+        "name": "Front Right"
+      }
+    },
+    {
+      "isTyre": true,
+      "itemId": "13",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "7",
+        "name": "Tyres"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": "Green",
+      "subSection": {
+        "id": "2",
+        "name": "Front Left"
+      }
+    },
+    {
+      "isTyre": true,
+      "itemId": "14",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "7",
+        "name": "Tyres"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": "Green",
+      "subSection": {
+        "id": "3",
+        "name": "Rear Right"
+      }
+    },
+    {
+      "isTyre": true,
+      "itemId": "15",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "7",
+        "name": "Tyres"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": null,
+      "severity": "Green",
+      "subSection": {
+        "id": "4",
+        "name": "Rear Left"
+      }
+    },
+    {
+      "isTyre": true,
+      "itemId": "16",
+      "tyreData": null,
+      "mediaData": null,
+      "section": {
+        "id": "7",
+        "name": "Tyres"
+      },
+      "followUpDate": null,
+      "itemPrice": 0,
+      "outcomeStatus": "Deferred",
+      "severity": "Green",
+      "subSection": {
+        "id": "5",
+        "name": "Spare"
+      }
+    }
+  ],
+  "mileage": 30000,
+  "orderNumber": "10c9b8a0-7006-4b64-82bc-db412ef48456",
+  "checkType": "VW Express Visual Check",
+  "mediaData": null,
+  "closedDate": "2015-10-28T11:02:29Z",
+  "technicianName": "Tribal",
+  "advisorName": "Agent 401",
+  "dealerNo": "00111",
+  "inspectionId": "4560"
+}
