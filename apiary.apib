@@ -2519,20 +2519,22 @@ Returns details of car based on order number
 + Response 200 (application/json)
   
  {
-  "id": null,
-  "carStatus": "ORDERD",
-  "displayName": null,
-  "carDetails": {
-    "colour": "red",
-    "model": "Golf GTD",
-    "derivative": "2.0 TDI 184 PS 6-speed DSG 5 Door"
-  },
-  "orderNumber": "25129452",
-  "deliveryLeadTimeStatement": null,
-  "deliveryPhaseStatement": "",
-  "deliveryPhaseType": null,
-  "suppliedByRetailer": {
-    "retailerId": "123450",
-    "retailerName": "Monaco Volkswagen"
+  "car": {
+    "id": null,
+    "carStatus": "ORDERD",
+    "displayName": null,
+    "carDetails": {
+      "colour": "red",
+      "model": "Golf GTD",
+      "derivative": "2.0 TDI 184 PS 6-speed DSG 5 Door"
+    },
+    "orderNumber": "25129452",
+    "deliveryLeadTimeStatement": null,
+    "deliveryPhaseStatement": "",
+    "deliveryPhaseType": null,
+    "suppliedByRetailer": {
+      "retailerId": "123450",
+      "retailerName": "Monaco Volkswagen"
+    }
   }
 }
