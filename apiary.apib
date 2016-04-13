@@ -2506,3 +2506,36 @@ Returls Car inspections report per booking id
   "dealerNo": "00111",
   "inspectionId": "4560"
 }
+
+
+
+
+# Orderd car
+    Ordered car API endpoint
+    
+## Order Lookup endpoint [/api/manheim-service/0.2/retailers/{retailerId}/booked-services/{serviceId}/inspection]
+Returns details of car based on order number
+### Get order details [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+  
+{
+  "id": null,
+  "carStatus": "ORDERD",
+  "displayName": null,
+  "carDetails": {
+    "colour": "red",
+    "model": "Golf GTD",
+    "derivative": "2.0 TDI 184 PS 6-speed DSG 5 Door"
+  },
+  "orderNumber": "25129452",
+  "deliveryLeadTimeStatement": null,
+  "deliveryPhaseStatement": "",
+  "deliveryPhaseType": null,
+  "suppliedByRetailer": {
+    "retailerId": "123450",
+    "retailerName": "Monaco Volkswagen"
+  }
+}
